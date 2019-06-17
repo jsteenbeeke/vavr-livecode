@@ -1,51 +1,126 @@
 package nl.topicus.topiconf.vavr.livecode;
 
 import io.vavr.Function2;
-import io.vavr.Function4;
-import io.vavr.collection.HashMap;
-import io.vavr.collection.Map;
-import nl.topicus.topiconf.vavr.data.Adres;
+import io.vavr.Lazy;
+import io.vavr.Tuple;
+import io.vavr.Tuple2;
+import io.vavr.collection.Seq;
+import io.vavr.control.Either;
+import io.vavr.control.Try;
+import io.vavr.control.Validation;
 import nl.topicus.topiconf.vavr.data.Persoon;
 import org.junit.Test;
+
+import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 public class Demo4 extends Demo2 {
 
 
     @Test
+    public void option() {
+        // 1. Maak een Option aan
+
+        // 2. Bewijs dat hij gevuld is
+
+        // 3. Filter er iets uit
+
+        // 4. Bewijs dat hij niet meer gevuld is
+    }
+
+    @Test
+    public void map_returns_null() {
+        // 1. Maak een Option aan
+
+        // 2. Voer een map uit die null oplevert
+
+        // 3. Laat zien dat dit niet werkt
+
+    }
+
+    @Test
     public void tuples() {
-        Map<Persoon, Adres> persoonAdressen = HashMap.of(vrijwilliger1, singel9)
-                .put(vrijwilliger2, singel25)
-                .put(vrijwilliger3, groteOverstraat29);
+        // 1. Maak een Tuple2 aan [J, 8]
+
+        // 2. Voeg "ava" toe aan het linker-element
+
+        // 3. Verhoog het rechterelement met 3
+
+        // 4. Laat zien dat de Tuple gelijk is aan [Java, 11]
+
 
     }
 
     @Test
-    public void functionPartialApply() {
-        Function2<Integer,Integer,Integer> sum = Integer::sum;
-
-    }
-
-    @Test
-    public void functionTupledApply() {
-        Function2<Integer,Integer,Integer> sum = Integer::sum;
-
-    }
-
-    @Test
-    public void liftedFunction() {
+    public void try_with_unsafe_divide() {
+        // 1. Maak een divide functie die delen door 0 niet uitsluit
         Function2<Integer,Integer,Integer> unsafeDivide = (a,b) -> a / b;
 
+        // 2. Deel 4 door 2
+
+        // 3. Toon aan dat dit werkt
+
+        // 4. Deel 4 door 0
+
+        // 5. Toon aan dat dit niet gewerkt heeft
     }
 
     @Test
-    public void curriedFunction() {
-        Function4<Integer,Integer,Integer,Integer,Integer> allBasicMath =
-                (a,b,c,d) -> a * b + c / d;
+    public void lazy() {
+        // 1. Maak complexe logica aan
+        var logica = new ComplexeLogica();
 
+        // 2. Maak lazy object die logica aanroept
+
+        // 3. Laat zien dat de methode niet aangeroepen is
+
+        // 4. Evalueer lazy en controleer dat de waarde 5 is
+
+        // 5. Laat zien dat de methode nu wel aangeroepen is
+
+        // 6. Roep hem nog een paar keer aan
+
+        // 7. En laat zien dat hij nog steeds maar 1x is aangeroepen
     }
 
     @Test
-    public void memoizedFunction() {
+    public void either() {
+        // Either wordt gebruikt om onderscheid te maken tussen failure (left) en success (right),
+        // in een door de programmeur gekozen vorm.
 
+        // 1. Maak complexe logica object aan
+        var logica = new ComplexeLogica();
+
+        // 2. Voer complexe berekening uit
+
+        // 3. Toon aan dat dit een right (success) is
+
+        // 4. Roep nu methode aan met ongeldige waarde
+
+        // 5. Toon aan dat dit een left (failure) is
     }
+
+    public static class ComplexeLogica {
+        private int aantalKeerBerekenAangeroepen;
+
+        public Integer berekenSuperMoeilijkGetal() {
+            aantalKeerBerekenAangeroepen++;
+            return 5;
+        }
+
+        public Either<String,Integer> bepaalQuotientVanSuperMoeilijkGetal(int deler) {
+            if (deler == 0) {
+                return Either.left("Delen door 0 is niet toegestaan");
+            }
+
+            return Either.right(berekenSuperMoeilijkGetal() / deler);
+        }
+
+        public int getAantalKeerBerekenAangeroepen() {
+            return aantalKeerBerekenAangeroepen;
+        }
+    }
+
+
 }

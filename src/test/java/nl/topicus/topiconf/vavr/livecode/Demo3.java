@@ -8,6 +8,9 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import static org.hamcrest.Matchers.equalTo;
+import static org.junit.Assert.assertThat;
+
 public class Demo3 {
     private BankRekening rekening;
 
@@ -30,13 +33,17 @@ public class Demo3 {
 
     @Test
     public void fold() {
-        // Bereken actuele balans
+        // 1. gebruik foldLeft om de actuele balans van een bankrekening te bepalen
+
+        // 2. bewijs dat het gelijk is aan 55350
 
     }
 
     @Test
     public void scan() {
-        // Bereken alle balansen
+        // 1. gebruik scanLeft om een lijst van balansen te bouwen
+
+        // 2. bewijs dat deze gelijk is aan [100, 350, 30350, 55350] is
 
     }
 
