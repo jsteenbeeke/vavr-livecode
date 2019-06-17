@@ -52,12 +52,15 @@ public class Demo2 extends DemoMetAdressen
 		HashSet<Persoon> eenEnTwee = HashSet.of(vrijwilliger1, vrijwilliger2);
 
 		// 2. maak een Set van vrijwilligers 2 en 3
-		HashSet<Persoon> tweeEnDrie = HashSet.of(vrijwilliger1, vrijwilliger2);
+		HashSet<Persoon> tweeEnDrie = HashSet.of(vrijwilliger2, vrijwilliger3);
 
-		// 3. demonstreer union
+		// 3. Maak een set van alle vrijwilligers
+		HashSet<Persoon> allemaal = HashSet.of(vrijwilliger1, vrijwilliger2, vrijwilliger3);
 
-		// 4. demonstreer intersect
+		// 4. Demonstreer dat union vrijwilligers 1, 2 en 3 oplevert
 
-		// 5. demonstreer diff
+		// 5. Demonstreer dat intersect vrijwilliger 2 oplevert
+
+		// 6. Demonstreer dat diff vrijwilliger 1 respectievelijk 3 oplevert
 	}
 }
