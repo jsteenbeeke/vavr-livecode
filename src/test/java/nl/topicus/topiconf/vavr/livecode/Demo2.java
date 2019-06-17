@@ -18,19 +18,23 @@ public class Demo2 extends DemoMetAdressen
 	@Before
 	public void prepareVrijwilligers() {
 		// Voeg 3 vrijwilligers toe
+		vrijwilliger1 = new Persoon("Jeroen", "Steenbeeke");
+		vrijwilliger2 = new Persoon("Martijn", "Dashorst");
+		vrijwilliger3 = new Persoon("Thijs", "Kupers");
 	}
-
 
 	@Test
-	public void filterAndReject() {
-		// 1. zet alle personen in een Array
+	public void rejections() {
+		// 1. Zet alle personen in een Array
 		Array<Persoon> personen = Array.of(vrijwilliger1, vrijwilliger2, vrijwilliger3);
 
-		// 2. gebruik filter om 1 persoon te selecteren
+		// 2. Neem de voornamen van iedereen
 
-		// 3. gebruik reject om 1 persoon te verwijderen
+		// 3. Reject alle Jeroens
 
+		// 4. Controleer dat er nog 2 vrijwilligers over zijn
 	}
+
 
 	@Test
 	public void zip() {
@@ -44,23 +48,5 @@ public class Demo2 extends DemoMetAdressen
 
 		// 4. bewijs dat elk persoon nu 1 adres heeft
 
-	}
-
-	@Test
-	public void union_intersect_diff() {
-		// 1. maak een Set van vrijwilligers 1 en 2
-		HashSet<Persoon> eenEnTwee = HashSet.of(vrijwilliger1, vrijwilliger2);
-
-		// 2. maak een Set van vrijwilligers 2 en 3
-		HashSet<Persoon> tweeEnDrie = HashSet.of(vrijwilliger2, vrijwilliger3);
-
-		// 3. Maak een set van alle vrijwilligers
-		HashSet<Persoon> allemaal = HashSet.of(vrijwilliger1, vrijwilliger2, vrijwilliger3);
-
-		// 4. Demonstreer dat union vrijwilligers 1, 2 en 3 oplevert
-
-		// 5. Demonstreer dat intersect vrijwilliger 2 oplevert
-
-		// 6. Demonstreer dat diff vrijwilliger 1 respectievelijk 3 oplevert
 	}
 }

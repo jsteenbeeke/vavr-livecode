@@ -1,14 +1,12 @@
 package nl.topicus.topiconf.vavr.livecode;
 
-import io.vavr.Function0;
 import io.vavr.Function2;
 import io.vavr.Function4;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
 
-public class Demo5 extends Demo4 {
+public class Demo5 {
 
     @Test
     public void functionPartialApply() {
@@ -41,7 +39,7 @@ public class Demo5 extends Demo4 {
         // 2. Laat deze falen
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void liftedUnsafeFunction() {
         // 1. Maak een onveilige Function
         Function2<Integer, Integer, Integer> unsafeDivide = (a, b) -> a / b;
@@ -72,6 +70,7 @@ public class Demo5 extends Demo4 {
     @Test
     public void memoizedFunction() {
         // 1. Maak een logica-object uit de vorige demo
+        Demo3.ComplexeLogica logica = new Demo3.ComplexeLogica();
 
         // 2. Maak een Function die de dure methode aanroept
 
