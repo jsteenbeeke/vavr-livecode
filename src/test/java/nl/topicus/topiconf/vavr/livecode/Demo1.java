@@ -14,17 +14,8 @@ public class Demo1  {
     }
 
     @Test
-    public void array() {
-        // 1. maak een variabele van type Array
-
-        // 2. voeg elementen toe
-
-        // 3. bewijs dat de elementen in de Array zitten
-    }
-
-    @Test
     public void set() {
-        // 1. maak een variabele van type Set
+        // 1. maak een variabele van type HashSet
 
         // 2. voeg elementen toe, met duplicates
 
@@ -34,11 +25,11 @@ public class Demo1  {
 
     @Test
     public void map() {
-        // 1. maak een variabele van type Map
+        // 1. maak een variabele van type HashMap
 
         // 2. voeg elementen toe
 
-        // 3. bewijs dat de elementen in de Map zitten
+        // 3. bewijs dat de elementen in de Map zitten (get -> option)
     }
 
     @Test
@@ -56,14 +47,5 @@ public class Demo1  {
         // 2. converteer die naar een Java collectie
 
         // 3. en converteer die terug naar een vavr collectie
-    }
-
-    @Test
-    public void immutable() {
-        // 1. maak een vavr collectie
-
-        // 2. voeg een element toe, maar bewaar de oorspronkelijke referentie
-
-        // 3. bewijs dat de oorspronkelijke referentie ongewijzigd is
     }
 }
